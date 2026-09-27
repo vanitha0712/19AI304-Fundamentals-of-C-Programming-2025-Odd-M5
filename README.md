@@ -39,7 +39,41 @@
 ### Step 12: 
   Stop
 # Program:
+    #include<stdio.h>
+
+    void swapv(int x, int y)
+    {
+    int temp = x; 
+    x = y; 
+    y = temp;
+    printf("Inside swapv: a = %d, b = %d\n", x, y);
+    }
+
+    void swapr(int *x, int *y)
+    {
+    int temp = *x; 
+    *x = *y; 
+    *y = temp; 
+    printf("Inside swapr: a = %d, b = %d\n", *x, *y);
+    }
+
+    int main()
+    {
+    int a = 10, b = 20;
+
+    printf("Before swapv: a = %d, b = %d\n", a, b);
+    swapv(a, b);
+    printf("After swapv: a = %d, b = %d\n", a, b);
+
+    printf("Before swapr: a = %d, b = %d\n", a, b);
+    swapr(&a, &b);
+    printf("After swapr: a = %d, b = %d\n", a, b);
+
+    return 0;
+    }
 # Output:
+<img width="832" height="651" alt="image" src="https://github.com/user-attachments/assets/643b11ca-effc-4d7b-af93-025dc1f9d42c" />
+
 # Result: 
   Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -77,7 +111,34 @@
 ### Step 10:
   Stop
 # Program:
+    #include <stdio.h>
+
+    int fibo(int x)
+
+    {
+    if (x == 0 || x == 1) 
+    return x;
+    else 
+    return fibo(x - 1) + fibo(x - 2); 
+    }
+
+    int main()
+    {
+    int n, i;
+    printf("Enter the number of terms: "); 
+    scanf("%d", &n);
+    printf("Fibonacci series of %d terms:\n", n);
+
+    for (i = 0; i < n; i++)
+    {
+    printf("%d ", fibo(i));
+    }
+
+    return 0;
+    }
 # Output:
+<img width="916" height="138" alt="image" src="https://github.com/user-attachments/assets/f934035a-cffd-4f49-9527-be400269361c" />
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -119,7 +180,34 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 12:
   Stop
 # Program:
+    #include<stdio.h>
+
+    void printEvenOdd(int cur, int limit)
+    {
+    if(cur > limit) 
+    return; 
+    if(cur == limit)
+    printf("%d", cur); 
+    else 
+    printf("%d, ", cur); 
+    printEvenOdd(cur + 2, limit);
+    }
+
+    int main()
+    {
+    int lowerLimit, upperLimit; 
+    scanf("%d", &lowerLimit);
+    scanf("%d", &upperLimit);
+
+    printf("Numbers in the given range:\n");
+    printEvenOdd(lowerLimit, upperLimit);
+    printf("\n");
+
+    return 0;
+    }
 # Output:
+<img width="792" height="552" alt="image" src="https://github.com/user-attachments/assets/f644c3cd-22fa-4a0b-8d42-13b12d8bc103" />
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -161,7 +249,38 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 11:
   Stop
 # Program:
+    #include<stdio.h>
+    #include<stdlib.h>
+
+    int main()
+    {
+    int *ptr, n, i, sum = 0;
+
+    scanf("%d", &n);
+
+    ptr = (int*) calloc(n, sizeof(int));
+    if(ptr == NULL){
+    printf("Memory allocation failed\n");
+    return 1;
+    }
+
+    for(i = 0; i < n; i++){
+    scanf("%d", ptr + i);
+    }
+
+    for(i = 0; i < n; i++){
+    sum += *(ptr + i);
+    }
+
+    printf("Sum = %d\n", sum);
+
+    free(ptr);
+    return 0;
+    }
 # Output:
+
+<img width="801" height="619" alt="image" src="https://github.com/user-attachments/assets/54574c3b-a6a6-4b4b-a062-e7108a531958" />
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -197,6 +316,31 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 10:
   Stop
 # Program:
+    #include<stdio.h>
+
+    void displayArray(int *arr, int size)
+    {
+    for(int i = 0; i < size; i++)
+    {
+    printf("%d ", *(arr + i));
+    } 
+    printf("\n");
+    }
+
+    int main(){ int arr[5], i;
+
+    for(i = 0; i < 5; i++){
+    scanf("%d", &arr[i]);
+    }
+
+    printf("Array elements:\n");
+    displayArray(arr, 5);
+
+    return 0;
+    }
 # Output:
+
+<img width="1006" height="644" alt="image" src="https://github.com/user-attachments/assets/e905e972-9178-4ef0-8ed9-44ff6fccc4ab" />
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
